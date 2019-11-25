@@ -25,7 +25,7 @@
 const findTheURLs = [];
 
 function findTheURL1() {
-  const requestURL = null;
+  const requestURL = 'https://hackyourfuture.be/practice-api/types.json';
 
   fetch(requestURL)
     .then(function parseResponse(resp) { return resp.json() })
@@ -45,7 +45,7 @@ findTheURLs.push(findTheURL1);
 
 
 function findTheURL2() {
-  const requestURL = null;
+  const requestURL = 'https://hackyourfuture.be/practice-api/food/wet/soups.json';
 
   fetch(requestURL)
     .then(function parseResponse(resp) { return resp.json() })
@@ -66,7 +66,7 @@ findTheURLs.push(findTheURL2);
 
 
 function findTheURL3() {
-  const requestURL = null;
+  const requestURL = 'https://hackyourfuture.be/practice-api/';
 
   fetch(requestURL)
     .then(function parseResponse(resp) { return resp.json() })
@@ -86,7 +86,7 @@ findTheURLs.push(findTheURL3);
 
 
 function findTheURL4() {
-  const requestURL = null;
+  const requestURL = 'https://hackyourfuture.be/practice-api/';
 
   fetch(requestURL)
     .then(function parseResponse(resp) { return resp.json() })
