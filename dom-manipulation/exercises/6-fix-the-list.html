@@ -1,85 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
 
-<head>
-  <meta charset="utf-8">
+    <title>fix the list</title>
+    <meta name="description" content="fix the list" />
 
-  <title>fix the list</title>
-  <meta name="description" content="fix the list">
+    <link href="../../dependencies/mocha/mocha.css" rel="stylesheet" />
+    <script src="../../dependencies/mocha/mocha.js"></script>
+    <script src="../../dependencies/assert.js"></script>
 
-  <link href="../../dependencies/mocha/mocha.css" rel="stylesheet" />
-  <script src="../../dependencies/mocha/mocha.js"></script>
-  <script src="../../dependencies/assert.js"></script>
+    <script src="../../dependencies/testTheDom.js"></script>
 
-  <script src="../../dependencies/testTheDom.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
 
-  <link rel="stylesheet" type="text/css" href="../style.css">
+  <body>
+    <header>
+      <h2>fix the list</h2>
+    </header>
 
-</head>
+    <section class="things-to-study">
+      <div id="side to inspect" class="exercise-output">
+        <div id="un-modified">
+          <ol>
+            <li>robots</li>
+            <li>wrong wrong wrong wrong</li>
+            <li>oil</li>
+            <li>oil</li>
+          </ol>
+        </div>
 
-<body>
+        <div id="replicate-me">
+          <h1>a list of things</h1>
+          <ul>
+            <li>robots</li>
+            <li>solar systems</li>
+            <li>oil</li>
+          </ul>
+        </div>
 
-  <header>
-    <h2>fix the list</h2>
-  </header>
+        <div id="modified">
+          <ol>
+            <li>robots</li>
+            <li>wrong wrong wrong wrong</li>
+            <li>oil</li>
+            <li>oil</li>
+          </ol>
+        </div>
 
-  <section class='things-to-study'>
-    <div id='side to inspect' class='exercise-output'>
+        <script id="DOM manipulation script">
+          // write me! (... without using cloneNode, that's kind of cheating)
 
-      <div id='un-modified'>
-        <ol>
-          <li>robots</li>
-          <li>wrong wrong wrong wrong</li>
-          <li>oil</li>
-          <li>oil</li>
-        </ol>
+          // add a h1, change ol to ul, change 2.li , delete 4.li
+
+          let modified = document.getElementById('modified');
+          let header = document.createElement('H1');
+          
+         
+    
+
+        </script>
       </div>
 
-      <div id='replicate-me'>
-        <h1>a list of things</h1>
-        <ul>
-          <li>robots</li>
-          <li>solar systems</li>
-          <li>oil</li>
-        </ul>
-      </div>
+      <div id="mocha" class="mocha-output"></div>
 
-      <div id='modified'>
-        <ol>
-          <li>robots</li>
-          <li>wrong wrong wrong wrong</li>
-          <li>oil</li>
-          <li>oil</li>
-        </ol>
-      </div>
-
-      <script id='DOM manipulation script'>
-        // write me! (... without using cloneNode, that's kind of cheating)
+      <script id="run the tests!">
+        mocha.setup({
+          ui: "bdd"
+        });
+        compareElements.attributesToTest = [
+          "nodeName",
+          "innerText",
+          "href",
+          "target",
+          "children",
+          "childElementCount"
+        ];
+        compareElements(
+          document.getElementById("modified"),
+          document.getElementById("replicate-me")
+        );
+        mocha.run();
       </script>
-
-    </div>
-
-    <div id="mocha" class='mocha-output'></div>
-
-    <script id='run the tests!'>
-      mocha.setup({
-        ui: 'bdd',
-      })
-      compareElements.attributesToTest = [
-        "nodeName", 'innerText', 'href', 'target', 'children', 'childElementCount'
-      ];
-      compareElements(
-        document.getElementById('modified'),
-        document.getElementById('replicate-me')
-      );
-      mocha.run();
-    </script>
-
-  </section>
-
-
-
-</body>
-
+    </section>
+  </body>
 </html>
