@@ -1,11 +1,7 @@
 /* explore the data available behind the practice API
     can you figure out which URL's point to the resources that will pass the asserts?
 
-<<<<<<< HEAD
     live API for fetching: https://hackyourfuturebelgium.github.io/practice-api/
-=======
-    live API for fetching: https://hackyourfuture.be/practice-api/
->>>>>>> f538fc7f64f1f51c349a6c1cccf25d2e9ad1c0f7
     data in source: https://github.com/HackYourFutureBelgium/practice-api
 
     This set of exercises is to help you look behind the mystery of an API call.
@@ -70,7 +66,7 @@ findTheURLs.push(findTheURL2);
 
 
 function findTheURL3() {
-  const requestURL = 'https://hackyourfuture.be/practice-api/';
+  const requestURL = 'https://hackyourfuture.be/practice-api/food/dry/nuts.json';
 
   fetch(requestURL)
     .then(function parseResponse(resp) { return resp.json() })
@@ -90,7 +86,7 @@ findTheURLs.push(findTheURL3);
 
 
 function findTheURL4() {
-  const requestURL = 'https://hackyourfuture.be/practice-api/';
+  const requestURL = 'https://hackyourfuture.be/practice-api/animals/worms.json';
 
   fetch(requestURL)
     .then(function parseResponse(resp) { return resp.json() })
