@@ -10,21 +10,21 @@ function writeTheDelays1() {
 
   setTimeout(function sto_1() {
     x += 'script'; console.log(x);
-  }, null);
+  }, 2000);
 
   setTimeout(function sto_2() {
     x = ''; console.log(x);
-  }, null);
+  }, 500);
 
   x += 'java'; console.log(x);
 
   setTimeout(function sto_3() {
     x += 'java'; console.log(x);
-  }, null);
+  }, 1000);
 
   setTimeout(function sto_4() {
     console.assert(x === 'javascript', 'x should be "javascript"');
-  }, null);
+  }, 3000);
 }
 exercises.push(writeTheDelays1);
 
@@ -37,22 +37,22 @@ function writeTheDelays2() {
 
   setTimeout(function sto_1() {
     console.assert(x === 'Java Script', 'x should be "Java Script"');
-  }, null);
+  }, 400);
 
   setTimeout(function sto_2() {
     x = x.slice(1, x.length);
     console.log(x);
-  }, null);
+  }, 300);
 
   setTimeout(function sto_3() {
-    x = [].map.call(x, char => char.charCodeAt() < 97 ? ' ' + char : char);
+    x = [].map.call(x, char => char.charCodeAt() < 97 ? ' ' + char : char);// what does this function exactly do??
     console.log(x.toString());
-  }, null);
+  }, 100);
 
   setTimeout(function sto_4() {
     x = x.join('');
     console.log(x);
-  }, null);
+  }, 200);
 }
 exercises.push(writeTheDelays2);
 
@@ -61,32 +61,32 @@ function writeTheDelays3() {
   let x = ["b", "c"];
 
   setTimeout(function sto_1() {
-    x = x.reduce((acc, entry) => acc + entry, '');
+    x = x.reduce((acc, entry) => acc + entry, '');//add all and give as a string
     console.log(typeof x, x.toString());
-  }, null);
+  }, 500);
 
   setTimeout(function sto_2() {
-    console.assert(x.toString() === 'a,b,c', 'x.toString() should be string a,b,c');
-  }, null);
+    console.assert(x.toString() === 'a,b,c', 'x.toString() should be string a,b,c');//x = "a,b,c"
+  }, 300);
 
   setTimeout(function sto_3() {
     x = ["a", ...x, "d"];
-    console.log(typeof x, x.toString());
-  }, null);
+    console.log(typeof x, x.toString());//"a","b","c","d"
+  }, 100);
 
   setTimeout(function sto_4() {
     x.pop();
-    console.log(typeof x, x.toString());
-  }, null);
+    console.log(typeof x, x.toString());// take the last item 
+  }, 200);
 
   setTimeout(function sto_5() {
     x.pop();
-    console.log(typeof x, x.toString());
-  }, null);
+    console.log(typeof x, x.toString());// take the last item
+  }, 400);
 
   setTimeout(function sto_6() {
-    console.assert(x.toString() === 'ab', 'x.toString() should be ab');
-  }, null);
+    console.assert(x.toString() === 'ab', 'x.toString() should be ab');// x = "ab"
+  }, 600);
 }
 exercises.push(writeTheDelays3);
 

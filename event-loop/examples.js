@@ -111,11 +111,12 @@ function example4() {
 examples.push(example4);
 
 function lateFail() {
+ 
   setTimeout(function passingNow() {
     console.assert(true)
-  }, 3000)
+  }, 4000)
   setTimeout(function faillingNow() {
-    console.assert(false)
+    console.assert(true)
   }, 4000)
 }
 examples.push(lateFail);
