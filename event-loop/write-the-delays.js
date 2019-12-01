@@ -33,7 +33,7 @@ exercises.push(writeTheDelays1);
 
 function writeTheDelays2() {
   let x = 'JavaScript';
-  console.log(x);
+  console.log(typeof x,', ', x);
 
   setTimeout(function sto_1() {
     console.assert(x === 'Java Script', 'x should be "Java Script"');
@@ -46,11 +46,14 @@ function writeTheDelays2() {
 
   setTimeout(function sto_3() {
     x = [].map.call(x, char => char.charCodeAt() < 97 ? ' ' + char : char);// what does this function exactly do??
+    console.log(JSON.stringify(x))
     console.log(x.toString());
   }, 100);
 
   setTimeout(function sto_4() {
+    console.log(x.constructor.name)
     x = x.join('');
+    console.log(typeof x)
     console.log(x);
   }, 200);
 }

@@ -12,6 +12,14 @@ function passTheAsserts1() {
     .then(function parseResponse(resp) { return resp.json() })
     .then(function workWithData(data) {
       // write me!
+      let numberOfFalseKeys = 0;
+      // console.log(data)
+      for (let key in data){
+        if( data[key] === false ){
+          numberOfFalseKeys++;
+        }
+      }
+      return numberOfFalseKeys
     })
     .then(function assertResult(result) {
       console.assert(result === 3, 'result should be 3');
@@ -24,6 +32,31 @@ function passTheAsserts1() {
 
 }
 passTheAsserts.push(passTheAsserts1);
+
+
+async function passTheAsserts1AsyncAwait() {
+
+  const requestURL = "https://hackyourfuture.be/practice-api/food/wet/soups.json";
+
+  const data = await fetch(requestURL)
+    .then(function parseResponse(resp) { return resp.json() });
+
+    let numberOfFalseKeys = 0;
+    // console.log(data)
+    for (let key in data){
+      if( data[key] === false ){
+        numberOfFalseKeys++;
+      }
+    }
+
+    console.assert(numberOfFalseKeys === 3, 'result should be 3');
+
+
+
+  return requestURL;
+
+}
+passTheAsserts.push(passTheAsserts1AsyncAwait);
 
 
 function passTheAsserts2() {

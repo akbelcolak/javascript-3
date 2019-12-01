@@ -27,7 +27,7 @@ debugThese.push(debugMe1);
 
 function debugMe2() {
 
-  const requestURL = "https://hackyourfutur.be/pactice-api/food/wet/soups.json";
+  const requestURL = "https://hackyourfuture.be/pactice-api/food/wet/soups.json";
 
   fetch(requestURL)
     .then(function parseResponse(resp) { return JSON.parse(resp) })
