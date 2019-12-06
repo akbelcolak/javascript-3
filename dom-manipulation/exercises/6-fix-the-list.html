@@ -57,6 +57,16 @@
 
           let modified = document.getElementById('modified');
           let header = document.createElement('H1');
+
+          header.textContent = 'a list of things';
+          modified.insertBefore(header, modified.children[0]);
+
+          modified.children[1].children[1].textContent = 'solar systems';
+          
+          let oil = modified.children[1].children[2];
+          
+
+
           
          
     
