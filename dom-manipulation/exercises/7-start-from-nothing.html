@@ -45,6 +45,36 @@
 
       <script id='DOM manipulation script'>
         // write me! (... without using cloneNode, that's kind of cheating)
+        
+        let modified = document.getElementById('modified');
+        
+        let header = document.createElement('h2');
+        modified.appendChild(header);
+        header.textContent = 'a list of things';
+
+        let ul = document.createElement('ul');
+        modified.appendChild(ul);
+
+        for (let numberOfLi = 0; numberOfLi < 4; numberOfLi++){
+          let li = document.createElement('li'); //.numberOfLi
+          ul.appendChild(li);
+        }
+        //li.textContent ='robots';
+
+        ul.children[0].textContent = 'robots';
+        ul.children[1].textContent = 'solar systems';
+        ul.children[2].textContent = 'learn about badgers';
+        ul.children[2].href = 'https://www.badgerbadgerbadger.com';
+        ul.children[2].target = '_blank';
+        
+        //let link = document.createElement('link');
+        //ul.children[2].appendChild(link);
+        // link.href = 'https://www.badgerbadgerbadger.com';
+        // link.target = '_blank';
+        // link.textContent = 'learn about badgers';
+        ul.children[3].textContent = 'oil';
+
+
       </script>
 
     </div>
